@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+@include('partials.header')
     <main class="bg-light">
         <div class="container">
             <div class="row">
