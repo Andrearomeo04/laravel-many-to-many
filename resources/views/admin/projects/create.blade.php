@@ -37,10 +37,21 @@
                         </select>
                     </div>
                     <div class="col-12">
+                        <div class="label">
+                            <label for="" class="control-label">Seleziona le tecnologie</label>
+                        </div>
+                        @foreach($technologies as $technology)
+                        <div class="form-check-inline ps-3">
+                            <input type="checkbox" name="technologies[]" id="" class="form-check-inline" value="{{ $technology->id }}" {{ is_array(old('technologies')) && in_array($technology->id, old('technologies')) ? 'checked' : '' }}>
+                            <label class="form-check-label">{{ $technology->title }}</label>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="col-12">
                         <label for="" class="control-label">Descrizione</label>
                         <textarea name="description" id="" cols="25" row="10" class="form-control">{{ old('description') }}</textarea>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 mt-3">
                         <button type="submit" class="btn btn-success">Salva</button>
                     </div>
                 </div>
